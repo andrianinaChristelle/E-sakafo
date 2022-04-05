@@ -17,30 +17,30 @@ export class LoginClientComponent implements OnInit {
   ngOnInit(): void {
   }
   Login(form : NgForm){
-    // var input: any = new FormData();
     var input ={
       email : this.users.email ,
       password : this.users.password
     }
-    // input.set("email" , "test");
-    // input.set("password","test");
-    // console.log(this.users.email);
 
     console.log(input);
     console.log("okkk");
     const onSuccess = (data:any)=>{
-      const type=typeof data ;
+      const type=typeof data['donnee'] ;
+      console.log("type"+data);
       if(type=='string'){
         this.message=data;
         console.log(data);
       }
       else{
-        this.token = data['token'];
+        this.token = data['donnee']['token'];
         sessionStorage.setItem("token",data['token']);
         console.log(this.token);
       }
     }
-    const onError = (data : any)=>{}
+    const onError = (data : any)=>{
+      const type=typeof data ;
+      console.log(typeof data );
+    }
     try{
       this.user.Login(input).subscribe(onSuccess,onError);
     }

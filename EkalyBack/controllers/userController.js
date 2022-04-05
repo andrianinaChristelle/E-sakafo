@@ -16,7 +16,7 @@ exports.addUser = async (req, res, next) => {
   next();
 };
 
-verifyToken = (req, res) => {
+exports.verifyToken = (req, res) => {
   let bearerHeader = req.headers['authorization'];
   // console.log(req.headers['authorization']);
   if (typeof bearerHeader !== 'undefined') {
@@ -52,7 +52,7 @@ exports.authentification = async (req, res, next) => {
   const users = await User.findOne(user);
   console.log(users);
   if (users == null) {
-    res.status(401).json('---- User incorrect');
+    res.status(401).json({ donnee: '---- User incorrect' });
   } else {
     const token = jwt.sign({ user: users }, 'secretkey', {
       expiresIn: '3600s',
@@ -61,7 +61,12 @@ exports.authentification = async (req, res, next) => {
     //   token: sign,
     // });
     // await token.save();
-    res.status(200).json({ token });
+    res.status(200).json({
+      donnee: {
+        message: 'user valider',
+        token,
+      },
+    });
   }
   next();
 };
