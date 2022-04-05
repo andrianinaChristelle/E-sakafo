@@ -14,7 +14,9 @@ export class LoginService {
     return this.http.get(base_url+"/getPlat");
   }
   Login(input : any){
-    let data = this.http.post(base_url+'authentification',input)
+      console.log("objetttt");
+      console.log(input);
+    let data = this.http.post(base_url+'authentification',input);
     console.log(data);
     return data;
   }

@@ -1,1 +1,9 @@
 <p>login-client works!</p>
+<label>Email</label>
+<form #f="ngForm" novalidate>
+<input [(ngModel)]="users.email"  name="email" type="text" #email="ngModel" required />
+<label>password</label>
+<input type="password" [(ngModel)]="users.password" name="password"  #password="ngModel" required />
+<button (click) = "Login(f)" type="submit" >Ajouter</button><br><br>
+{{message}}
+</form>

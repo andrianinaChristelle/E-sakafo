@@ -52,7 +52,7 @@ exports.authentification = async (req, res, next) => {
   const users = await User.findOne(user);
   console.log(users);
   if (users == null) {
-    res.status(401).json({ message: '---- User incorrect' });
+    res.status(401).json('---- User incorrect');
   } else {
     const token = jwt.sign({ user: users }, 'secretkey', {
       expiresIn: '3600s',

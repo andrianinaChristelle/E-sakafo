@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { LoginService } from '../services/login.service';
 import { Router } from '@angular/router';
+import { NgForm } from '@angular/forms';
 
 @Component({
   selector: 'app-login-client',
@@ -9,34 +10,46 @@ import { Router } from '@angular/router';
 })
 export class LoginClientComponent implements OnInit {
 
-  constructor(private plat : LoginService) { }
-  Plat : any []=[];
+  constructor(private user : LoginService, private route : Router ) { }
+  token : any='';
+  users = {email:'' , password :''};
   message : any ='';
   ngOnInit(): void {
-      const onSuccess = (data:any)=>{
-        // if(data['status']==201){
-          console.log('tesst');
-          console.log(data.status);
-         if(){
-           
-         }
-        // }
-        // else{
-        //   this.message ="some error";
-        //   console.log('okkk');
-        // }
+  }
+  Login(form : NgForm){
+    // var input: any = new FormData();
+    var input ={
+      email : this.users.email ,
+      password : this.users.password
+    }
+    // input.set("email" , "test");
+    // input.set("password","test");
+    // console.log(this.users.email);
+
+    console.log(input);
+    console.log("okkk");
+    const onSuccess = (data:any)=>{
+      const type=typeof data ;
+      if(type=='string'){
+        this.message=data;
+        console.log(data);
       }
-      const  onError =(data : any)=>{}
-      try{
-        this.plat.getAll().subscribe(onSuccess, onError);
+      else{
+        this.token = data['token'];
+        sessionStorage.setItem("token",data['token']);
+        console.log(this.token);
       }
-      catch(err){
-        console.log("erreur");
-        this.message =err;
-        
+    }
+    const onError = (data : any)=>{}
+    try{
+      this.user.Login(input).subscribe(onSuccess,onError);
+    }
+    catch(err){
+      this.message =err;
         console.log(err);
-      }
+    }
+    
+  }
+   
   }
 
-
-}
