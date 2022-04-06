@@ -1,0 +1,17 @@
+<p>ajout-restau works!</p>
+<p>login-client works!</p>
+
+<form #f="ngForm" novalidate>
+    <label>Email</label>
+    <input [(ngModel)]="restau.email"  name="email" type="text" #email="ngModel" required /><br>
+    <label>Nom du restaurant</label>
+    <input [(ngModel)]="restau.nom"  name="nom" type="text" #nom="ngModel" required /><br>
+    <label>Contact</label>
+    <input [(ngModel)]="restau.contact"  name="contact" type="text" #contact="ngModel" required /><br>
+    <label>Localisation</label>
+    <input [(ngModel)]="restau.localisation"  name="email" type="text" #localisation="ngModel" required /><br>
+    <label>mot de passe</label>
+    <input type="password" [(ngModel)]="restau.password" name="password"  #password="ngModel" required />
+    <button (click) = "onInsert(f)" type="submit" >Ajouter</button><br><br>
+{{message}}
+</form>

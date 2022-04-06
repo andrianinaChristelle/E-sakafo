@@ -19,3 +19,9 @@ exports.getRestaurant = async (res, req, next) => {
     .catch((error) => res.status(404).json(error));
   next();
 };
+exports.getByIdRestaurant = async (res, req, next) => {
+  await Restaurant.findOne({ _id: req.id })
+    .then((data) => res.status(201).json(data))
+    .catch((error) => res.statatus(404).json(error));
+  next();
+};

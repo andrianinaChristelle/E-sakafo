@@ -25,17 +25,18 @@ export class LoginClientComponent implements OnInit {
     console.log(input);
     console.log("okkk");
     const onSuccess = (data:any)=>{
-      const type=typeof data['donnee'] ;
-      console.log("type"+data);
-      if(type=='string'){
-        this.message=data;
-        console.log(data);
-      }
-      else{
-        this.token = data['donnee']['token'];
-        sessionStorage.setItem("token",data['token']);
-        console.log(this.token);
-      }
+      const type=typeof data['data'] ;
+      // console.log("type"+data);
+      // if(type=='string'){
+      //   this.message=data;
+      //   console.log(data);
+      // }
+      // else{
+        this.token = data['data']['token'];
+        sessionStorage.setItem("token",data['data']['token']);
+        this.route.navigate(['Liste-Resto']);
+        // console.log(this.token);
+     
     }
     const onError = (data : any)=>{
       const type=typeof data ;

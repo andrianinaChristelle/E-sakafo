@@ -6,11 +6,17 @@ import { AppComponent } from './app.component';
 import { LoginClientComponent } from './login-client/login-client.component';
 import {  HttpClientModule } from '@angular/common/http';
 import { FormsModule } from '@angular/forms';
+import { ListeRestoClientComponent } from './liste-resto-client/liste-resto-client.component';
+import { AjoutRestoComponent } from './ajout-resto/ajout-resto.component';
+import { DetailRestoComponent } from './detail-resto/detail-resto.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    LoginClientComponent
+    LoginClientComponent,
+    ListeRestoClientComponent,
+    AjoutRestoComponent,
+    DetailRestoComponent
   ],
   imports: [
     BrowserModule,

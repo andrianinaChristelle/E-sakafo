@@ -1,0 +1,15 @@
+<p>liste-resto-client works!</p>
+<div>
+<table class="rwd-table">
+    <tr>
+        <th> nom</th>
+        <th>email</th>
+        <th>lieu</th> 
+    </tr>
+    <tr *ngFor="let listes of liste">
+        <td>{{listes.nom}}</td>
+        <td>{{listes.email}}</td>
+        <td>{{listes.localisation}}</td>
+    </tr>
+</table>
+</div>
