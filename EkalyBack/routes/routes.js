@@ -37,10 +37,12 @@ router.post('/authentification', UsersController.authentification);
 
 router.get('/getPlat', PlatController.getPlat);
 
-router.post('/getByIdUser/:id', UsersController.getByIdUser);
+router.get('/getByIdUser/:id', UsersController.getByIdUser);
 
 ///////////////////////////////Restaurant////////////////////////
 
 router.post('/addRestaurant', UsersController.addRestaurant);
+
+// router.get('/', RoleController.hello);
 
 module.exports = router;

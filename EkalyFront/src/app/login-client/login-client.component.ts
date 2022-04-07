@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { LoginService } from '../services/login.service';
 import { Router } from '@angular/router';
-import { NgForm } from '@angular/forms';
+import { NgForm ,FormControl, Validators} from '@angular/forms';
 
 @Component({
   selector: 'app-login-client',

@@ -19,6 +19,11 @@ exports.getRole = async (req, res, next) => {
     .catch((error) => res.status(404).json(error));
   next();
 };
+exports.hello = async (req, res) => {
+  res.statusCode = 200;
+  res.setHeader('Content-Type', 'text/html');
+  res.end('<h1>Hello World</h1>');
+};
 
 // exports.getRole = async (req, res, next) => {
 //   await Role.find()
