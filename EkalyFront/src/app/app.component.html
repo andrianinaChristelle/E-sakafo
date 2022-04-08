@@ -1,4 +1,34 @@
+<div *ngIf="session">
+<p>
+    <mat-toolbar color="#FFFF00">
+      <img src="assets/img/logo.png" alt="image"/>
+     
+      <div class="example-button-row">
+        <span>E-Kaly</span>
+    </div>
+      <section>
+        <div class="example-button-row">
+            <button mat-stroked-button>Commande</button>
+            <button mat-stroked-button>Restaurant</button>
+            <button mat-stroked-button>Livreur</button>
+            <button mat-stroked-button>Benefice</button>
+        </div>
+      </section>
+      <span class="example-spacer"> </span>
+      
+      <button mat-button disabled>Logout</button>
+      <button mat-icon-button class="example-icon favorite-icon" aria-label="Example icon-button with heart icon">
+       <mat-icon>logout</mat-icon>
+      </button>
+    </mat-toolbar>
+  </p>
+  
+      <!-- {{session}} -->
+  </div>   
+  <div *ngIf="!session">
+      session inexistant
+  </div> 
+  <router-outlet></router-outlet>
 
-<h1>Hello</h1>
-<mat-slider min="1" max="100" step="1" value="50"></mat-slider>
-<router-outlet></router-outlet>
+  
+
