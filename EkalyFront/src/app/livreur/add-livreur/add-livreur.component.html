@@ -1,0 +1,36 @@
+<p>Ajout livreur!</p>
+<div class="container">
+    <div class="row">
+      <div class="col">
+      </div>
+      <div class="col-6">
+       <h2> Nouveau livreur</h2>
+        <div class="row">
+            <div class="col-4">
+                <label>Nom  :</label><br><br><br>
+                <label>Prenom :  </label><br><br><br>
+                <label>Email :</label><br><br><br>
+               
+                <label>Contact :</label><br><br><br>
+               
+                <label>Mot de passe :</label><br><br><br>
+            </div>
+            <div class="col-8">
+        <div class="form-group">
+            <form #f="ngForm" novalidate>
+                <input [(ngModel)]="livreurs.nom" placeholder="nom" class="form-control" name="nom" type="text" #nom="ngModel" required /><br>
+                <input [(ngModel)]="livreurs.prenom" placeholder="prenom" class="form-control" type="text" name="email" type="text" #prenom="ngModel" required /><br>
+  
+                    <input [(ngModel)]="livreurs.email" type="email" class="form-control" id="exampleInputEmail1" name="email" aria-describedby="emailHelp" placeholder=" email"#email="ngModel" required /><br>
+                <input [(ngModel)]="livreurs.contact" class="form-control" name="contact" type="number" placeholder="+261" #contact="ngModel" required /><br>
+                <input type="password" [(ngModel)]="livreurs.password" class="form-control" name="password"  #password="ngModel" required /><br>
+                <button (click) = "onInsert(f)" type="submit" class="btn btn-success">Ajouter</button><br><br>
+            {{message}}
+            </form>
+            </div>
+            </div>
+        </div>
+      </div>
+      <div class="col">
+      </div>
+    </div>

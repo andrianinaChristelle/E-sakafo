@@ -1,10 +1,29 @@
-<p>login-client works!</p>
-<label>Email</label>
-<form #f="ngForm" novalidate>
-<input [(ngModel)]="users.email"  name="email" type="text" #email="ngModel" required />
-<label>password</label>
-<input type="password" [(ngModel)]="users.password" name="password"  #password="ngModel" required />
-<button (click) = "Login(f)" type="submit" >Ajouter</button><br><br>
-{{message}}
-</form>
 
+<div class="container">
+    <div class="row">
+      <div class="col">
+      </div>
+      <div class="col-6">
+          <div class="login-wrap">
+       <h2> Se connecter</h2>
+        <div class="row">
+            <div class="col-4">
+                <label>Email :</label><br><br><br>
+                <label>Mot de passe :</label><br><br><br> 
+            </div>
+            <div class="col-8">
+        <div class="form-group">
+            <form #f="ngForm" novalidate>
+            <input [(ngModel)]="users.email" type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" name="email" type="text" #email="ngModel" required /><br>
+            <input  [(ngModel)]="users.password" type="password" class="form-control" name="password" #password="ngModel" required /><br>
+            <button (click) = "Login(f)" type="submit" class="btn btn-success" >Connexion</button><br><br>
+            </form>
+            </div>
+            </div>
+            </div>
+            {{message}}
+        </div>
+      </div>
+      <div class="col">
+      </div>
+    </div>

@@ -1,15 +1,15 @@
 import { Component, OnInit } from '@angular/core';
-import { RestaurantService } from '../services/restaurant.service';
-import { Router } from '@angular/router';
+import { LivreurService } from 'src/app/services/livreur.service';
+import {Router} from '@angular/router';
 
 @Component({
-  selector: 'app-liste-resto-client',
-  templateUrl: './liste-resto-client.component.html',
-  styleUrls: ['./liste-resto-client.component.css']
+  selector: 'app-liste-livreur',
+  templateUrl: './liste-livreur.component.html',
+  styleUrls: ['./liste-livreur.component.css']
 })
-export class ListeRestoClientComponent implements OnInit {
+export class ListeLivreurComponent implements OnInit {
 
-  constructor(private restaurant : RestaurantService , private route : Router) { }
+  constructor(private livreur : LivreurService , private route : Router) { }
 
   message : any ='';
   liste : any [] =[];
@@ -25,7 +25,7 @@ export class ListeRestoClientComponent implements OnInit {
       }
       try{
         console.log("ok");
-        this.restaurant.getAllRestaurant().subscribe(onSuccess, onError);
+        this.livreur.getAllLivreur().subscribe(onSuccess, onError);
       
       }
       catch(err){
@@ -37,7 +37,7 @@ export class ListeRestoClientComponent implements OnInit {
       // this.restaurant.getAllRestaurant();
   }
   redirect() {
-    this.route.navigate(['add-Resto']);
+    this.route.navigate(['ajout-livreur']);
 }
 
 }

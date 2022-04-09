@@ -7,6 +7,7 @@ const PlatController = require('../controllers/platController');
 const UsersController = require('../controllers/userController');
 const RestaurantController = require('../controllers/restaurantController');
 const RoleController = require('../controllers/roleControllers');
+const LivreurController = require('../controllers/livreurController');
 
 router.post('/addEmploye', EmpController.addEmploye);
 
@@ -42,6 +43,8 @@ router.get('/getByIdUser/:id', UsersController.getByIdUser);
 ///////////////////////////////Restaurant////////////////////////
 
 router.post('/addRestaurant', UsersController.addRestaurant);
+
+router.post('/addLivreur', LivreurController.addLivreur);
 
 // router.get('/', RoleController.hello);
 

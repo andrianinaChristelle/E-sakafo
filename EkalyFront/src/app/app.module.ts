@@ -18,6 +18,8 @@ import { AjoutRestoComponent } from './ajout-resto/ajout-resto.component';
 import { DetailRestoComponent } from './detail-resto/detail-resto.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MatFormFieldModule } from '@angular/material/form-field';
+import { ListeLivreurComponent } from './livreur/liste-livreur/liste-livreur.component';
+import { AddLivreurComponent } from './livreur/add-livreur/add-livreur.component';
 
 @NgModule({
   declarations: [
@@ -25,7 +27,9 @@ import { MatFormFieldModule } from '@angular/material/form-field';
     LoginClientComponent,
     ListeRestoClientComponent,
     AjoutRestoComponent,
-    DetailRestoComponent
+    DetailRestoComponent,
+    ListeLivreurComponent,
+    AddLivreurComponent
   ],
   imports: [
     BrowserModule,

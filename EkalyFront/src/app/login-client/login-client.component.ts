@@ -39,8 +39,9 @@ export class LoginClientComponent implements OnInit {
      
     }
     const onError = (data : any)=>{
-      const type=typeof data ;
-      console.log(typeof data );
+      // const type=typeof data ;
+      this.message ="erreur";
+      console.log("okkkk");
     }
     try{
       this.user.Login(input).subscribe(onSuccess,onError);

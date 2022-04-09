@@ -8,17 +8,17 @@
     </div>
       <section>
         <div class="example-button-row">
-            <button mat-stroked-button>Commande</button>
-            <button mat-stroked-button>Restaurant</button>
-            <button mat-stroked-button>Livreur</button>
+            <button mat-stroked-button routerLink="">Commande</button>
+            <button mat-stroked-button routerLink="Liste-Resto">Restaurant</button>
+            <button mat-stroked-button routerLink="liste-livreur">Livreur</button>
             <button mat-stroked-button>Benefice</button>
         </div>
       </section>
       <span class="example-spacer"> </span>
       
-      <button mat-button disabled>Logout</button>
+      <button mat-button disabled (click)="logOut()">Logout</button>
       <button mat-icon-button class="example-icon favorite-icon" aria-label="Example icon-button with heart icon">
-       <mat-icon>logout</mat-icon>
+       <mat-icon (click)="logOut()">logout</mat-icon>
       </button>
     </mat-toolbar>
   </p>

@@ -31,11 +31,12 @@ export class AjoutRestoComponent implements OnInit {
     console.log("okkk");
     const onSuccess = ()=>{  
         this.route.navigate(['Liste-Resto']);     
+        console.log("data enter");
     }
     const onError = (data : any)=>{
-      const type=typeof data ;
+      // const type=typeof data ;
       this.message = 'erreur'
-      this.route.navigate(['Liste-Resto']);  
+      // this.route.navigate(['Liste-Resto']);  
     }
     try{
       this.resto.addRestaurant(input).subscribe(onSuccess,onError);

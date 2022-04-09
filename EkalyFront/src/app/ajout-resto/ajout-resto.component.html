@@ -7,21 +7,21 @@
        <h2> Nouveau Restaurant</h2>
         <div class="row">
             <div class="col-4">
-                <label>Email</label><br><br><br>
-                <label>Nom du restaurant</label><br><br><br>
-                <label>Contact</label><br><br><br>
-                <label>Localisation</label><br><br><br>
-                <label>mot de passe</label><br><br><br>
+                <label>Email :</label><br><br><br>
+                <label>Nom du restaurant :</label><br><br><br>
+                <label>Contact :</label><br><br><br>
+                <label>Localisation :</label><br><br><br>
+                <label>Mot de passe :</label><br><br><br>
             </div>
             <div class="col-8">
         <div class="form-group">
             <form #f="ngForm" novalidate>
                 <div class="form-group">
-                    <input [(ngModel)]="restau.email" type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter email"#email="ngModel" required /><br>
+                    <input [(ngModel)]="restau.email" type="email" class="form-control" id="exampleInputEmail1" name="email" aria-describedby="emailHelp" placeholder="email"#email="ngModel" required /><br>
                 </div>
-                <input [(ngModel)]="restau.nom"  class="form-control" name="nom" type="text" #nom="ngModel" required /><br>
-                <input [(ngModel)]="restau.contact" class="form-control" name="contact" type="text" #contact="ngModel" required /><br>
-                <input [(ngModel)]="restau.localisation" class="form-control" type="password" name="email" type="text" #localisation="ngModel" required /><br>
+                <input [(ngModel)]="restau.nom" placeholder="nom resto" class="form-control" name="nom" type="text" #nom="ngModel" required /><br>
+                <input [(ngModel)]="restau.contact" class="form-control" name="contact" type="number" placeholder="+261" #contact="ngModel" required /><br>
+                <input [(ngModel)]="restau.localisation" class="form-control" type="text" name="localisation" type="text" #localisation="ngModel" required /><br>
                 <input type="password" [(ngModel)]="restau.password" class="form-control" name="password"  #password="ngModel" required /><br>
                 <button (click) = "onInsert(f)" type="submit" class="btn btn-success">Ajouter</button><br><br>
             {{message}}

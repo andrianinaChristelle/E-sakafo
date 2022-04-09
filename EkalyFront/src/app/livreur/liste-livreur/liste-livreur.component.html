@@ -1,19 +1,14 @@
-
-
-
-    <p>Liste Restaurant</p>
-
-    
-  <div>
+<p>liste-livreur works!</p>
+<div>
     <div class="container">
-      <button (click)="redirect()" type="submit" class="btn btn-success">Ajout Restaurant</button>
+      <button (click)="redirect()" type="submit" class="btn btn-success">Ajout Livreur</button>
         <div class="table-responsive">
           <table class="table table-striped">
             <thead>
               <tr>
                 <th scope="col"> nom</th>
                 <th scope="col">email</th>
-                <th scope="col">lieu</th> 
+                <th scope="col">Contact</th> 
               </tr>
               <tr style="height: 1rem; border: none; box-shadow: none;"></tr>
             </thead>
@@ -21,7 +16,7 @@
                 <tr  *ngFor="let listes of liste">
                 <td>{{listes.nom}}</td>
                 <td>{{listes.email}}</td>
-                <td>{{listes.localisation}}</td>
+                <td>{{listes.contact}}</td>
             </tr>
             </tbody>
           </table>
