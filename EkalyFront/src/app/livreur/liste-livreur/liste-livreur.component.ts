@@ -15,7 +15,6 @@ export class ListeLivreurComponent implements OnInit {
   liste : any [] =[];
   
   ngOnInit(): void {
-    
       const onSuccess = (data:any)  =>{
             console.log(data['data']);
             this.liste=data['data'];
@@ -38,6 +37,29 @@ export class ListeLivreurComponent implements OnInit {
   }
   redirect() {
     this.route.navigate(['ajout-livreur']);
-}
+  }
+  onKeypressEvent(event: any){
+    console.log(event.target.value);
+    var key =event.target.value;
+    const onSuccess = (data:any)  =>{
+      console.log(data['data']);
+      this.liste=data['data'];
+    }
+    const  onError =(data : any)=>{
+      // this.route.navigate(['login']);
+    }
+    try{
+      console.log("ok");
+      this.livreur.search(key).subscribe(onSuccess, onError);
+
+    }
+    catch(err){
+      console.log("erreur");
+      this.message =err;
+      
+      console.log(err);
+    }
+    
+ }
 
 }

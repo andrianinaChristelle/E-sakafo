@@ -23,4 +23,12 @@ export class LivreurService {
     console.log(data);
     return data;
   }
+  search(key : any){
+    console.log("keiii"+key);
+    // const options = this.toolsServ.formOption(); // headers
+    // options.headers.Authorization='Bearer ' +sessionStorage.getItem('token');
+    let data = this.http.get(base_url+'searchLivreur/'+key);
+    console.log(data);
+    return data;
+  }
 }

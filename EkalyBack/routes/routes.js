@@ -46,6 +46,8 @@ router.post('/addRestaurant', UsersController.addRestaurant);
 
 router.post('/addLivreur', LivreurController.addLivreur);
 
+router.get('/searchLivreur/:key', LivreurController.searchLivreur);
+
 // router.get('/', RoleController.hello);
 
 module.exports = router;

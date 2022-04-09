@@ -2,6 +2,7 @@
 <div>
     <div class="container">
       <button (click)="redirect()" type="submit" class="btn btn-success">Ajout Livreur</button>
+      <input type="text" (keypress)="onKeypressEvent($event)" />
         <div class="table-responsive">
           <table class="table table-striped">
             <thead>

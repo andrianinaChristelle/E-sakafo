@@ -36,3 +36,16 @@ exports.addLivreur = async (req, res, next) => {
   }
   next();
 };
+
+exports.searchLivreur = async (req, res, next) => {
+  console.log(req.params.key);
+  await User.find({
+    $and: [
+      { nom: { $regex: '.*' + req.params.key + '.*' } },
+      { role: '624d4aa38dc84c21fb3afd78' },
+    ],
+  })
+    .then((users) => res.status(200).json({ data: users }))
+    .catch((error) => res.status(404).json(error));
+  next();
+};
