@@ -1,5 +1,6 @@
 import { Component , OnInit} from '@angular/core';
 import { Router } from '@angular/router';
+import { LoginService } from './services/login.service';
 
 
 @Component({
@@ -8,11 +9,33 @@ import { Router } from '@angular/router';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent implements OnInit {
-  constructor( private route : Router ) { }
+  constructor( private route : Router , private login :LoginService ) { }
   title = 'EkalyFront';
   session : any ='';
+  liste : any ='';
+  nom : any ='';
+  idRole : any ='';
   ngOnInit(): void {
     this.session =sessionStorage.getItem('token');
+      const onSuccess = (data:any)  =>{
+        console.log(data['data']);
+        this.idRole=data['user']['role'];
+        this.nom=data['user']['nom'];
+        }
+        const  onError =(data : any)=>{
+          this.route.navigate(['login']);
+        }
+        try{
+          console.log("ok");
+          this.login.getToken().subscribe(onSuccess, onError);
+  
+        }
+        catch(err){
+          console.log("erreur");
+          console.log(err);
+        }
+    
+    
   }
   logOut() {
     sessionStorage.removeItem('token');

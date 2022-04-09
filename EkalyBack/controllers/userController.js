@@ -117,6 +117,18 @@ exports.getByIdUser = async (req, res, next) => {
   next();
 };
 
+exports.getToken = async (req, res, next) => {
+  await jwt.verify(this.verifyToken(req, res), 'secretkey', (err, authData) => {
+    if (err) {
+      res.status(403).json(err);
+      console.log(req.headers['authorization']);
+    } else {
+      res.status(200).json(authData);
+    }
+  });
+  next();
+};
+
 exports.authentification = async (req, res, next) => {
   const email = req.body.email;
   const user = await User.findOne({ email });

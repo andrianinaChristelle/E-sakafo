@@ -27,4 +27,11 @@ export class LoginService {
   console.log(data);
   return data;
   }
+  getToken(){
+    const options = this.toolsServ.formOption(); // headers
+    options.headers.Authorization='Bearer ' +sessionStorage.getItem('token');
+    let data = this.http.get(base_url+'getToken',options);
+    console.log(data);
+    return data;
+  }
 }

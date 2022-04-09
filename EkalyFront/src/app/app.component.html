@@ -1,4 +1,4 @@
-<div *ngIf="session">
+<div *ngIf="session!=null && idRole=='624d4a978dc84c21fb3afd76'">
 <p>
     <mat-toolbar color="#FFFF00">
       <img src="assets/img/logo.png" alt="image"/>
@@ -24,7 +24,34 @@
   </p>
   
       <!-- {{session}} -->
-  </div>   
+  </div>  
+  <div *ngIf="session!=null && idRole=='624d4ad88dc84c21fb3afd7c'">
+    <p>
+      <mat-toolbar color="#FFFF00">
+        <img src="assets/img/logo.png" alt="image"/>
+       
+        <div class="example-button-row">
+          <span>E-Kaly</span>
+          <button mat-stroked-button routerLink="">Plat</button>
+          <button mat-stroked-button routerLink="">Commande</button>
+          <button mat-stroked-button routerLink="">Benefice</button>
+      </div>
+       
+        <span class="example-spacer"> </span>
+        <section>
+          
+         
+          <button mat-stroked-button routerLink=""><mat-icon>account_circle</mat-icon>{{nom}}</button>
+     
+    </section>
+        <button mat-button disabled (click)="logOut()">Logout</button>
+        <button mat-icon-button class="example-icon favorite-icon" aria-label="Example icon-button with heart icon">
+         <mat-icon (click)="logOut()">logout</mat-icon>
+        </button>
+      </mat-toolbar>
+    </p>
+</div> 
+  
   <div *ngIf="!session">
       session inexistant
   </div> 

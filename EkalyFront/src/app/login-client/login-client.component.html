@@ -16,7 +16,7 @@
             <form #f="ngForm" novalidate>
             <input [(ngModel)]="users.email" type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" name="email" type="text" #email="ngModel" required /><br>
             <input  [(ngModel)]="users.password" type="password" class="form-control" name="password" #password="ngModel" required /><br>
-            <button (click) = "Login(f)" type="submit" class="btn btn-success" >Connexion</button><br><br>
+            <button (click) = "redirection()" type="submit" class="btn btn-success" >Connexion</button><br><br>
             </form>
             </div>
             </div>

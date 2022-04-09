@@ -20,6 +20,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { ListeLivreurComponent } from './livreur/liste-livreur/liste-livreur.component';
 import { AddLivreurComponent } from './livreur/add-livreur/add-livreur.component';
+import { ListePlatComponent } from './plat/liste-plat/liste-plat.component';
 
 @NgModule({
   declarations: [
@@ -29,7 +30,8 @@ import { AddLivreurComponent } from './livreur/add-livreur/add-livreur.component
     AjoutRestoComponent,
     DetailRestoComponent,
     ListeLivreurComponent,
-    AddLivreurComponent
+    AddLivreurComponent,
+    ListePlatComponent
   ],
   imports: [
     BrowserModule,

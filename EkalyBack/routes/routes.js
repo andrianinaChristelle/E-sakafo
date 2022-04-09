@@ -19,7 +19,10 @@ router.post('/checkingEmploye', EmpController.doEmpCheck);
 
 router.get('/pollutionParis', AirPollutionController.getHighestPollution);
 
+/////////////////////Plat///////////////////////////////////
+
 router.post('/addPlat', PlatController.addPlat);
+router.get('/getByRestaurant/:idResto', PlatController.getPlat);
 
 //////////////////////////////////Role//////////////////////////////////
 router.post('/addRole', RoleController.addRole);
@@ -31,6 +34,8 @@ router.get('/getRole', RoleController.getRole);
 router.post('/addUser', UsersController.addUser);
 
 router.get('/getUser', UsersController.getUser);
+
+router.get('/getToken', UsersController.getToken);
 
 router.get('/getByRole/:role', UsersController.getByRole);
 

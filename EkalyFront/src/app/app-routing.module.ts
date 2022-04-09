@@ -5,13 +5,15 @@ import { ListeRestoClientComponent } from './liste-resto-client/liste-resto-clie
 import { LoginClientComponent } from './login-client/login-client.component';
 import { ListeLivreurComponent } from './livreur/liste-livreur/liste-livreur.component';
 import { AddLivreurComponent } from './livreur/add-livreur/add-livreur.component';
+import { ListePlatComponent } from './plat/liste-plat/liste-plat.component';
 
 const routes: Routes = [
   {path : 'login' , component : LoginClientComponent},
   {path : 'Liste-Resto' , component : ListeRestoClientComponent} , 
   {path : 'add-Resto' , component : AjoutRestoComponent} ,
   {path : 'liste-livreur' , component : ListeLivreurComponent},
-  {path : 'ajout-livreur' , component : AddLivreurComponent}
+  {path : 'ajout-livreur' , component : AddLivreurComponent},
+  {path : 'liste-Plat' , component : ListePlatComponent}
 ];
 
 @NgModule({
