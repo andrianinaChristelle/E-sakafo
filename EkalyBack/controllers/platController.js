@@ -35,7 +35,7 @@ exports.getPlat = async (req, res, next) => {
   console.log(id);
   const objectId = mongoose.Types.ObjectId(id);
   await Plat.find({ restaurant: objectId })
-    .then((plats) => res.status(201).json(plats))
+    .then((plats) => res.status(201).json({ data: plats }))
     .catch((error) => res.status(404).json(error));
   next();
 };

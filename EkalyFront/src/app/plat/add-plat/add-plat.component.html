@@ -1,0 +1,29 @@
+<p>add-plat works!</p>
+<div class="container">
+    <div class="row">
+      <div class="col">
+      </div>
+      <div class="col-6">
+       <h2> Nouveau livreur</h2>
+        <div class="row">
+            <div class="col-4">
+                <label>Plat  :</label><br><br><br>
+                <label>Prix d'achat :  </label><br><br><br>
+                <label>Prix de vente :</label><br><br><br>
+            </div>
+            <div class="col-8">
+        <div class="form-group">
+            <form #f="ngForm" novalidate>
+                <input [(ngModel)]="plats.plat" placeholder="plat" class="form-control" name="plat" type="text" #plat="ngModel" required /><br>
+                <input [(ngModel)]="plats.prixAchat" placeholder="prix d'achat" class="form-control" name="prixAchat" type="number" #prixAchat="ngModel" required /><br>
+                <input [(ngModel)]="plats.prixVente" placeholder="prix de vente" class="form-control" name="prixVente" type="text" #prixVente="ngModel" required /><br>
+                <button (click) = "onInsert()" type="submit" class="btn btn-success">Ajouter</button><br><br>
+            {{message}}
+            </form>
+            </div>
+            </div>
+        </div>
+      </div>
+      <div class="col">
+      </div>
+    </div>

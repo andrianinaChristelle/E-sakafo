@@ -15,4 +15,11 @@ export class PlatService {
     options.headers.Authorization='Bearer ' +sessionStorage.getItem('token');
     return this.http.get(base_url+"getByRestaurant/"+idResto,options);
     }
+  addPlat(input : any){
+    const options = this.toolsServ.formOption(); // headers
+    options.headers.Authorization='Bearer ' +sessionStorage.getItem('token');
+    let data = this.http.post(base_url+'addPlat',input,options);
+    console.log(data);
+    return data;
+  }
 }

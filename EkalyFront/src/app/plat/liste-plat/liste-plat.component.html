@@ -1,1 +1,26 @@
 <p>liste-plat works!</p>
+<p>liste-livreur works!</p>
+<div>
+    <div class="container">
+      <button (click)="redirect()" type="submit" class="btn btn-success">Ajout Plat</button>
+      <!-- <input type="text" (keypress)="onKeypressEvent($event)" /> -->
+        <div class="table-responsive">
+          <table class="table table-striped">
+            <thead>
+              <tr>
+                <th scope="col"> plat</th>
+                <th scope="col">prixAchat</th>
+                <th scope="col">prixVente</th> 
+              </tr>
+              <tr style="height: 1rem; border: none; box-shadow: none;"></tr>
+            </thead>
+            <tbody>
+                <tr  *ngFor="let listes of liste">
+                <td>{{listes.plat}}</td>
+                <td>{{listes.prixAchat}}</td>
+                <td>{{listes.prixVente}}</td>
+            </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>

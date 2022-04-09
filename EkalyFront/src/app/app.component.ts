@@ -21,6 +21,7 @@ export class AppComponent implements OnInit {
         console.log(data['data']);
         this.idRole=data['user']['role'];
         this.nom=data['user']['nom'];
+        sessionStorage.setItem("id",data['user']['_id']);
         }
         const  onError =(data : any)=>{
           this.route.navigate(['login']);
@@ -39,6 +40,7 @@ export class AppComponent implements OnInit {
   }
   logOut() {
     sessionStorage.removeItem('token');
+    sessionStorage.removeItem('id');
     this.route.navigate(['login']);
   }
 }

@@ -6,6 +6,7 @@ import { LoginClientComponent } from './login-client/login-client.component';
 import { ListeLivreurComponent } from './livreur/liste-livreur/liste-livreur.component';
 import { AddLivreurComponent } from './livreur/add-livreur/add-livreur.component';
 import { ListePlatComponent } from './plat/liste-plat/liste-plat.component';
+import { AddPlatComponent } from './plat/add-plat/add-plat.component';
 
 const routes: Routes = [
   {path : 'login' , component : LoginClientComponent},
@@ -13,7 +14,8 @@ const routes: Routes = [
   {path : 'add-Resto' , component : AjoutRestoComponent} ,
   {path : 'liste-livreur' , component : ListeLivreurComponent},
   {path : 'ajout-livreur' , component : AddLivreurComponent},
-  {path : 'liste-Plat' , component : ListePlatComponent}
+  {path : 'liste-Plat' , component : ListePlatComponent} ,
+  {path : 'ajout-Plat' , component: AddPlatComponent}
 ];
 
 @NgModule({

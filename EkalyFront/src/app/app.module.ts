@@ -21,6 +21,7 @@ import { MatFormFieldModule } from '@angular/material/form-field';
 import { ListeLivreurComponent } from './livreur/liste-livreur/liste-livreur.component';
 import { AddLivreurComponent } from './livreur/add-livreur/add-livreur.component';
 import { ListePlatComponent } from './plat/liste-plat/liste-plat.component';
+import { AddPlatComponent } from './plat/add-plat/add-plat.component';
 
 @NgModule({
   declarations: [
@@ -31,7 +32,8 @@ import { ListePlatComponent } from './plat/liste-plat/liste-plat.component';
     DetailRestoComponent,
     ListeLivreurComponent,
     AddLivreurComponent,
-    ListePlatComponent
+    ListePlatComponent,
+    AddPlatComponent
   ],
   imports: [
     BrowserModule,
