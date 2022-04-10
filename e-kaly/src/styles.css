@@ -1,0 +1,16 @@
+/* You can add global styles to this file, and also import other style files */
+@import "./assets/css/style.css";
+@import "./assets/lib/animate/animate.css";
+@import "./assets/lib/animate/animate.min.css";
+@import "./assets/lib/flaticon/font/flaticon.css";
+@import "./assets/lib/owlcarousel/assets/owl.carousel.css";
+@import "./assets/lib/owlcarousel/assets/owl.carousel.min.css";
+@import "./assets/lib/owlcarousel/assets/owl.theme.default.css";
+@import "./assets/lib/owlcarousel/assets/owl.theme.default.min.css";
+@import "./assets/lib/owlcarousel/assets/owl.theme.green.css";
+@import "./assets/lib/owlcarousel/assets/owl.theme.green.min.css";
+@import "./assets/lib/tempusdominus/css/tempusdominus-bootstrap-4.css";
+@import "./assets/lib/tempusdominus/css/tempusdominus-bootstrap-4.min.css";
+
+html, body { height: 100%; }
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
