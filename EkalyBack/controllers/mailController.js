@@ -5,7 +5,7 @@ const buildHtml = () => {
   html += '<p>Bonjour, </p>';
   html += '<br><br>';
   html +=
-    'Votre compte e-kaly est creer veuillez suivre le lien suivant https://e-kaly-m1p9mean-front-leong.herokuapp.com, ';
+    'Votre compte e-kaly est creer veuillez suivre le lien suivant https://m1p9mean-christelle.herokuapp.com, ';
   // html += '<br><br>';
   // let total = 0;
   // panier.forEach((item) => {

@@ -50,7 +50,7 @@ export class InscriptionComponent implements OnInit {
       prenom : this.clients.prenom ,
       localisation : this.clients.localisation,
       role : '624d4ad18dc84c21fb3afd7a'
-    }
+    }  
     this.envoieMail(this.clients.email);
     console.log(input);
     console.log("okkk");
