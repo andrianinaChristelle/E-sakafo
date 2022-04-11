@@ -1,4 +1,3 @@
-<p>plat works!</p>
 <app-header></app-header>
 <div class="menu">
     <div class="container">
@@ -6,12 +5,13 @@
             <p>Food Menu</p>
             <h2>Delicious Food Menu</h2>
         </div>
+        <div class="input-group">
+            <input type="texte" class="form-control"  (keypress)="onKeypressEvent($event)" placeholder="Recherche" required="required" />
+            <div class="input-group-append">
+        <div class="input-group-text"><i class="fas fa-search"></i></div>
+    </div><br>
         <div class="control-group">
-            <div class="input-group">
-                <input type="texte" class="form-control"  (keypress)="onKeypressEvent($event)" placeholder="Recherche" required="required" />
-                <div class="input-group-append">
-            <div class="input-group-text"><i class="fas fa-search"></i></div>
-        </div><br>
+         
         <div class="menu-tab">
             <ul class="nav nav-pills justify-content-center">
                 <li class="nav-item">
