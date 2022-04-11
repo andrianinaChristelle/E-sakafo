@@ -1,5 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
+import {ThemePalette} from '@angular/material/core';
+import {ProgressSpinnerMode} from '@angular/material/progress-spinner';
+import { LoaderService } from '../services/loader.service';
 
 @Component({
   selector: 'app-header',
@@ -8,9 +11,13 @@ import { Router } from '@angular/router';
 })
 export class HeaderComponent implements OnInit {
 
-  constructor(private route : Router) { }
+  constructor(private route : Router , public loaderService : LoaderService) { }
   nom : any = '';
   token : any ='';
+  color: ThemePalette = 'primary';
+  mode: ProgressSpinnerMode = 'indeterminate';
+  value = 50;
+
   ngOnInit(): void {
     this.nom = sessionStorage.getItem('nom');
     console.log(this.nom)

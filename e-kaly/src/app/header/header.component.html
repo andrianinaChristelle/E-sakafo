@@ -1,3 +1,4 @@
+
 <div class="navbar navbar-expand-lg bg-light navbar-light">
     <div class="container-fluid">
         <a href="index.html" class="navbar-brand">E- <span>Kaly</span></a>
@@ -29,6 +30,10 @@
   
   
   <!-- Carousel Start -->
+  <div *ngIf="loaderService.isLoading | async" class="loader-container">
+    <mat-spinner style="top:50% ; left:50%"></mat-spinner>
+  </div>
+
   <div class="carousel">
   
                 <div class="carousel-text">

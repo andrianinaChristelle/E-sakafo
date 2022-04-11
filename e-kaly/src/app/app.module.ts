@@ -1,8 +1,9 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { MatIconModule } from '@angular/material/icon';
-import { HttpClientModule } from '@angular/common/http';
+import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 import {MatProgressSpinnerModule} from '@angular/material/progress-spinner';
+import {MatProgressBarModule} from '@angular/material/progress-bar';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -15,6 +16,7 @@ import { InscriptionComponent } from './page/inscription/inscription.component';
 import { PlatComponent } from './page/plat/plat.component';
 import { PanierComponent } from './page/panier/panier.component';
 import { FormsModule } from '@angular/forms';
+import { InterceptorService } from './services/interceptor.service';
 
 @NgModule({
   declarations: [
@@ -34,9 +36,12 @@ import { FormsModule } from '@angular/forms';
     MatIconModule ,
     HttpClientModule ,
     FormsModule,
-    MatProgressSpinnerModule
+    MatProgressSpinnerModule,
+    MatProgressBarModule
   ],
-  providers: [],
+  providers: [
+    {provide: HTTP_INTERCEPTORS , useClass:InterceptorService , multi:true}
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
