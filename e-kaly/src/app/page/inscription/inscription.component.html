@@ -40,7 +40,7 @@
                         </div><br>
                         <div class="control-group">
                             <div class="input-group date" id="date" data-target-input="nearest">
-                                <input [(ngModel)]="clients.localisation" class="form-control" name="contact" type="texte"  #contact="ngModel" required/>
+                                <input [(ngModel)]="clients.localisation" class="form-control" placeholder="localisation" name="contact" type="texte"  #contact="ngModel" required/>
                                 <div class="input-group-append" data-target="#date" data-toggle="datetimepicker">
                                     <div class="input-group-text"><i class="far fa-calendar-alt"></i></div>
                                 </div>
@@ -48,7 +48,7 @@
                         </div><br>
                         <div class="control-group">
                             <div class="input-group time" id="time" data-target-input="nearest">
-                                <input type="password" [(ngModel)]="clients.password" class="form-control" name="password"  #password="ngModel" required/>
+                                <input type="password" [(ngModel)]="clients.password" class="form-control" placeholder="mot de passe" name="password"  #password="ngModel" required/>
                                 <div class="input-group-append" data-target="#time" data-toggle="datetimepicker">
                                     <div class="input-group-text"><i class="fas fa-lock"></i></div>
                                 </div>

@@ -33,4 +33,9 @@ export class LoginService {
     console.log(data);
     return data;
   }
+  envoyeMail(input : any){
+    let data = this.http.post(base_url+'send-mail',input);
+    console.log(data);
+    return data;
+  }
 }

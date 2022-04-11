@@ -18,6 +18,29 @@ export class InscriptionComponent implements OnInit {
   ngOnInit(): void {
     
   }
+  envoieMail(email:any){
+    var input ={
+      to : email ,
+      subject : "numero client 001"
+    }
+
+    console.log(input);
+    console.log("okkk");
+    const onSuccess = ()=>{  
+   
+        console.log("email envoyer");
+    }
+    const onError = (data : any)=>{
+      this.message = 'erreur'
+    }
+    try{
+      this.client.envoyeMail(input).subscribe(onSuccess,onError);
+    }
+    catch(err){
+      this.message =err;
+        console.log(err);
+    }
+  }
   onInsert(form : NgForm){
     var input ={
       email : this.clients.email ,
@@ -28,11 +51,11 @@ export class InscriptionComponent implements OnInit {
       localisation : this.clients.localisation,
       role : '624d4ad18dc84c21fb3afd7a'
     }
-
+    this.envoieMail(this.clients.email);
     console.log(input);
     console.log("okkk");
     const onSuccess = ()=>{  
-        this.route.navigate(['liste-client']);     
+        // this.route.navigate(['login']);     
         console.log("data enter");
     }
     const onError = (data : any)=>{
