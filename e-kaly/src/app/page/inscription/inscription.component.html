@@ -1,0 +1,77 @@
+<div class="cote">
+    <div class="container">
+        <div class="row">
+            <div class="col-6">
+                <div class="login-wrap">
+                    <h2> Se connecter</h2>
+               
+                    <form #f="ngForm" novalidate>
+                        <div class="control-group">
+                            <div class="input-group">
+                                <input [(ngModel)]="clients.nom" placeholder="nom" class="form-control" name="nom" type="text" #nom="ngModel" required />
+                                <div class="input-group-append">
+                                    <div class="input-group-text"><i class="far fa-user"></i></div>
+                                </div>
+                            </div>
+                        </div><br>
+                        <div class="control-group">
+                            <div class="input-group">
+                                <input [(ngModel)]="clients.prenom" placeholder="prenom" class="form-control" type="text" name="email" type="text" #prenom="ngModel" required  />
+                                <div class="input-group-append">
+                                    <div class="input-group-text"><i class="far fa-user"></i></div>
+                                </div>
+                            </div>
+                        </div><br>
+                        <div class="control-group">
+                            <div class="input-group">
+                                <input [(ngModel)]="clients.email" type="email" class="form-control" id="exampleInputEmail1" name="email" aria-describedby="emailHelp" placeholder=" email"#email="ngModel" required  />
+                                <div class="input-group-append">
+                                    <div class="input-group-text"><i class="far fa-envelope"></i></div>
+                                </div>
+                            </div>
+                        </div><br>
+                        <div class="control-group">
+                            <div class="input-group">
+                                <input [(ngModel)]="clients.contact" class="form-control" name="contact" type="number" placeholder="+261" #contact="ngModel" required />
+                                <div class="input-group-append">
+                                    <div class="input-group-text"><i class="fa fa-mobile-alt"></i></div>
+                                </div>
+                            </div>
+                        </div><br>
+                        <div class="control-group">
+                            <div class="input-group date" id="date" data-target-input="nearest">
+                                <input [(ngModel)]="clients.localisation" class="form-control" name="contact" type="texte"  #contact="ngModel" required/>
+                                <div class="input-group-append" data-target="#date" data-toggle="datetimepicker">
+                                    <div class="input-group-text"><i class="far fa-calendar-alt"></i></div>
+                                </div>
+                            </div>
+                        </div><br>
+                        <div class="control-group">
+                            <div class="input-group time" id="time" data-target-input="nearest">
+                                <input type="password" [(ngModel)]="clients.password" class="form-control" name="password"  #password="ngModel" required/>
+                                <div class="input-group-append" data-target="#time" data-toggle="datetimepicker">
+                                    <div class="input-group-text"><i class="fas fa-lock"></i></div>
+                                </div>
+                            </div>
+                        </div><br>
+                       
+                        <div>
+                            <button (click) = "onInsert(f)" class="btn custom-btn" type="submit">S'inscription</button>
+                        </div>
+                    </form>
+                      
+             
+                        
+                
+                 </div>
+            </div>
+        </div>
+    </div>
+</div>
+    
+
+
+
+
+
+

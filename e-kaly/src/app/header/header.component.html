@@ -11,8 +11,15 @@
                 <a href="about.html" class="nav-item nav-link">Commandez</a>
                 <a href="feature.html" class="nav-item nav-link">Recette</a>
                 <a href="team.html" class="nav-item nav-link">A propos de nous</a>
+                
                 <a href="menu.html" class="nav-item nav-link">Contactez E-kaly</a>
-                <button class="btn custom-btn">Se connecter<mat-icon>logout</mat-icon> </button>
+                <div *ngIf="token!=null"> 
+                    <button class="btn btn-info" routerLink="login" type="button"><mat-icon>account_circle</mat-icon> {{nom}} </button>
+                    <button class="btn btn-success" (click)="logOut()" routerLink="login" type="button">Deconnection <mat-icon>logout</mat-icon> </button>
+                </div>
+                <div *ngIf="token==null"> 
+                <button class="btn btn-success" routerLink="login" type="submit"> <mat-icon>login</mat-icon> Se connecter </button>
+                </div>
             </div>
         </div>
     </div>
@@ -29,9 +36,6 @@
                         Morbi sagittis turpis id suscipit feugiat. Suspendisse eu augue urna. Morbi sagittis, orci sodales varius fermentum, tortor
                     </p>
                     <div class="footer-newsletter">
-                      <div class="form">
-                        <input class="form-control" placeholder="Search">
-                    </div>
                     
                     </div>
               

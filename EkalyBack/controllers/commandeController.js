@@ -32,6 +32,9 @@ exports.addCommande = async (req, res, next) => {
     next();
   }
 };
+
+exports.verification = async (req, res, next) => {};
+
 exports.getRole = async (req, res, next) => {
   await Commande.find({ etat: true })
     .then((commande) => res.status(201).json(commande))

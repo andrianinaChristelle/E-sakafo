@@ -155,3 +155,24 @@ exports.authentification = async (req, res, next) => {
   }
   next();
 };
+
+exports.addClient = async (req, res, next) => {
+  console.log('client');
+  delete req.body._id;
+
+  const Users = new User({
+    email: req.body.email,
+    password: bcrypt.hashSync(req.body.password, 10),
+    prenom: req.body.prenom,
+    contact: req.body.contact,
+    nom: req.body.nom,
+    role: req.body.role,
+    localisation: req.body.localisation,
+  });
+  await Users.save()
+    .then(() => res.status(201).json({ message: '---- User creer' }))
+    .catch((error) => {
+      res.status(400).json({ error });
+    });
+  next();
+};

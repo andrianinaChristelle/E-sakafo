@@ -1,0 +1,29 @@
+.login-wrap{
+     /* border-width: 5%;
+    display: inline-block;
+    border-radius: 50px ;
+    box-shadow: 10px 15px 15px 20px wheat; */
+    width:75%;
+    height: 75%;
+     color :blue; 
+    background:10px 15px 15px 20px ;
+    margin-left: 0%;
+    margin-top: 25%;
+     padding : 5%; 
+     text-align:justify; 
+   /* / margin: 200px; */ 
+  }
+  .cote{
+    background:url( https://teteamodeler.ouest-france.fr/media/cache/thumb_800/nourriture-explication-tte-modeler-du-mot-nourriture.png);
+  }
+  /* .login-test{
+    width:100%;
+    margin:auto;
+    max-width:525px;
+    min-height:670px;
+    position:relative;
+  
+    box-shadow:0 12px 15px 0 rgba(0,0,0,.24),0 17px 50px 0 rgba(0,0,0,.19);
+  } */
+
+  

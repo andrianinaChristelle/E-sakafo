@@ -10,10 +10,10 @@ export class PlatService {
 
   constructor(private http : HttpClient, private toolsServ : ToolsService) { }
   getPlat(idResto : any){
-    console.log('hgjhgj');
-    const options = this.toolsServ.formOption();
-    options.headers.Authorization='Bearer ' +sessionStorage.getItem('token');
-    return this.http.get(base_url+"getByRestaurant/"+idResto,options);
+    // console.log('hgjhgj');
+    // const options = this.toolsServ.formOption();
+    // options.headers.Authorization='Bearer ' +sessionStorage.getItem('token');
+    return this.http.get(base_url+"getByRestaurant/"+idResto);
     }
   addPlat(input : any){
     const options = this.toolsServ.formOption(); // headers

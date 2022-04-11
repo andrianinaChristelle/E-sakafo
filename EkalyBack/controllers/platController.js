@@ -39,13 +39,14 @@ exports.getPlat = async (req, res, next) => {
     .catch((error) => res.status(404).json(error));
   next();
 };
-
-exports.searchLivreurResto = async (req, res, next) => {
-  console.log(req.params.key);
+exports.recherchePlat = async (req, res, next) => {
+  // const id = '624d4ad88dc84c21fb3afd7c';
+  // console.log(id);
+  // const role = mongoose.Types.ObjectId(id);
   await Plat.find({
     $and: [
       { plat: { $regex: '.*' + req.params.key + '.*' } },
-      { restaurant: req.params.id_resto },
+      { restaurant: req.params.idResto },
     ],
   })
     .then((users) => res.status(200).json({ data: users }))

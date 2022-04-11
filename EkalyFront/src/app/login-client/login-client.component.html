@@ -1,29 +1,46 @@
 
-<div class="container">
-    <div class="row">
-      <div class="col">
-      </div>
-      <div class="col-6">
-          <div class="login-wrap">
-       <h2> Se connecter</h2>
+    <div class="cote">
+    <div class="container">
         <div class="row">
-            <div class="col-4">
-                <label>Email :</label><br><br><br>
-                <label>Mot de passe :</label><br><br><br> 
+            <div class="col-6">
+                <div class="login-wrap">
+                    <img src="assets/img/logo.png" alt="image"/>
+                    <h2> Se connecter</h2>
+               
+                    <form #f="ngForm" novalidate>
+                     <div class="control-group">
+                         <div class="input-group">
+                                 <input  [(ngModel)]="users.email"  name="email" #email="ngModel" type="email" class="form-control" placeholder="Email" required="required" />
+                                     <div class="input-group-append">
+    
+                                     </div>
+                                 </div>
+                         </div><br>
+                                 
+                         <div class="control-group">
+                             <div class="input-group">
+                                 <input type="password" [(ngModel)]="users.password" class="form-control" name="password" #password="ngModel" placeholder="Password" required="required" />
+                                 <div class="input-group-append">
+                    
+                                    
+                         </div>
+                      </div><br>
+                             </div> 
+                                 <div>
+                                     <button (click) = "redirection()" class="btn btn-primary" type="submit">Se connecter</button>
+                                 </div><br>
+                             <div>
+                         <button class="btn btn-primary"type="submit">S'inscrire</button>
+                     </div>
+                 </form>  
+             
+                        
+                
+                 </div>
             </div>
-            <div class="col-8">
-        <div class="form-group">
-            <form #f="ngForm" novalidate>
-            <input [(ngModel)]="users.email" type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" name="email" type="text" #email="ngModel" required /><br>
-            <input  [(ngModel)]="users.password" type="password" class="form-control" name="password" #password="ngModel" required /><br>
-            <button (click) = "redirection()" type="submit" class="btn btn-success" >Connexion</button><br><br>
-            </form>
+            <div class="col-6">
+               
             </div>
-            </div>
-            </div>
-            {{message}}
         </div>
-      </div>
-      <div class="col">
-      </div>
     </div>
+   </div>

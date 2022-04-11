@@ -1,4 +1,5 @@
 <p>resto</p>
+<!-- <mat-spinner></mat-spinner> -->
 <app-header></app-header>
 <!-- Blog Start -->
 <div class="blog">
@@ -6,18 +7,27 @@
         <div class="section-header text-center">
             <p>Food Blog</p>
             <h2>Les Restaurant</h2>
+          
         </div>
         <div class="row">
-            <div class="col-md-6">
+            <div class="control-group">
+                <div class="input-group">
+                    <input type="texte" class="form-control"  (keypress)="onKeypressEvent($event)" placeholder="Recherche" required="required" />
+                    <div class="input-group-append">
+                <div class="input-group-text"><i class="fas fa-search"></i></div>
+            </div><br>
+            <div *ngFor="let listes of liste" >
+                
+            <div  class="col-lg-5 col-md-12 center">
                 <div class="blog-item">
                     <div class="blog-img">
                         <img src="../assets/img/blog-1.jpg" alt="Blog">
                     </div>
                     <div class="blog-content">
-                        <h2 class="blog-title">Lorem ipsum dolor sit amet</h2>
+                        <h2 class="blog-title">{{listes.nom}}</h2>
                         <div class="blog-meta">
-                            <p><i class="far fa-user"></i>Admin</p>
-                            <p><i class="far fa-list-alt"></i>Food</p>
+                            <p><i class="far fa-location"></i>{{listes.localisation}}</p>
+                            <p><i class="far fa-phone"></i>{{listes.contact}}</p>
                             <p><i class="far fa-calendar-alt"></i>01-Jan-2045</p>
                             <p><i class="far fa-comments"></i>10</p>
                         </div>
@@ -25,33 +35,12 @@
                             <p>
                                 Lorem ipsum dolor sit amet elit. Neca pretim miura bitur facili ornare velit non vulpte liqum metus tortor. Lorem ipsum dolor sit amet elit. Neca pretim miura bitur facili ornare velit non vulpte
                             </p>
-                            <a class="btn custom-btn" href="">Read More</a>
+                            <a class="btn custom-btn" [routerLink] = "['plat']" [queryParams] = '{idResto :listes._id}' href="">Commander</a>
                         </div>
                     </div>
                 </div>
             </div>
-            <div class="col-md-6">
-                <div class="blog-item">
-                    <div class="blog-img">
-                        <img src="../assets/img/blog-2.jpg" alt="Blog">
-                    </div>
-                    <div class="blog-content">
-                        <h2 class="blog-title">Lorem ipsum dolor sit amet</h2>
-                        <div class="blog-meta">
-                            <p><i class="far fa-user"></i>Admin</p>
-                            <p><i class="far fa-list-alt"></i>Food</p>
-                            <p><i class="far fa-calendar-alt"></i>01-Jan-2045</p>
-                            <p><i class="far fa-comments"></i>10</p>
-                        </div>
-                        <div class="blog-text">
-                            <p>
-                                Lorem ipsum dolor sit amet elit. Neca pretim miura bitur facili ornare velit non vulpte liqum metus tortor. Lorem ipsum dolor sit amet elit. Neca pretim miura bitur facili ornare velit non vulpte
-                            </p>
-                            <a class="btn custom-btn" href="">Read More</a>
-                        </div>
-                    </div>
-                </div>
-            </div>
+         </div>
         </div>
     </div>
   </div>

@@ -1,21 +1,20 @@
 import { Component, OnInit } from '@angular/core';
+import { ActivatedRoute } from '@angular/router';
 import { RestaurantService } from 'src/app/services/restaurant.service';
-import { Router } from '@angular/router';
 
 @Component({
-  selector: 'app-liste-resto',
-  templateUrl: './liste-resto.component.html',
-  styleUrls: ['./liste-resto.component.css']
+  selector: 'app-plat',
+  templateUrl: './plat.component.html',
+  styleUrls: ['./plat.component.css']
 })
-export class ListeRestoComponent implements OnInit {
+export class PlatComponent implements OnInit {
 
-  constructor(private restaurant : RestaurantService , private route : Router) { }
-
+  constructor(private route : ActivatedRoute , private restaurant : RestaurantService) { }
   message : any ='';
   liste : any [] =[];
-  
+  idResto : any =this.route.snapshot.queryParamMap.get('idResto');
   ngOnInit(): void {
-    
+    console.log("resto---------"+this.idResto);
       const onSuccess = (data:any)  =>{
             console.log(data['data']);
             this.liste=data['data'];
@@ -24,7 +23,7 @@ export class ListeRestoComponent implements OnInit {
       }
       try{
         console.log("ok");
-        this.restaurant.getAllRestaurant ().subscribe(onSuccess, onError);
+        this.restaurant.getPlat(this.idResto).subscribe(onSuccess, onError);
       
       }
       catch(err){
@@ -35,10 +34,8 @@ export class ListeRestoComponent implements OnInit {
       }
       // this.restaurant.getAllRestaurant();
   }
-  redirect() {
-    this.route.navigate(['add-Resto']);
-  }
   onKeypressEvent(event: any){
+    // this.idResto=this.route.snapshot.queryParamMap.get('idResto');
     console.log(event.target.value);
     var key =event.target.value;
     const onSuccess = (data:any)  =>{
@@ -50,7 +47,7 @@ export class ListeRestoComponent implements OnInit {
     }
     try{
       console.log("ok");
-      this.restaurant.searchResto(key).subscribe(onSuccess, onError);
+      this.restaurant.searchPlat(key,this.idResto).subscribe(onSuccess, onError);
 
     }
     catch(err){
@@ -60,4 +57,9 @@ export class ListeRestoComponent implements OnInit {
       console.log(err);
     }
   }
+
+//   redirect() {
+//     this.route.navigate(['add-Resto']);
+// }
+
 }

@@ -1,5 +1,7 @@
 const Restaurant = require('../models/restaurant');
 const userController = require('./userController');
+const User = require('../models/user');
+const mongoose = require('mongoose');
 
 exports.addRestaurant = async (req, res, next) => {
   delete req.body._id;
@@ -13,15 +15,28 @@ exports.addRestaurant = async (req, res, next) => {
     });
   next();
 };
-exports.getRestaurant = async (res, req, next) => {
-  await Restaurant.find()
-    .then((response) => res.status(201).json(response))
+
+exports.recherche = async (req, res, next) => {
+  // const id = '624d4ad88dc84c21fb3afd7c';
+  // console.log(id);
+  // const role = mongoose.Types.ObjectId(id);
+  await User.find({
+    $and: [
+      { nom: { $regex: '.*' + req.params.key + '.*' } },
+      { role: '624d4ad88dc84c21fb3afd7c' },
+    ],
+  })
+    .then((users) => res.status(200).json({ data: users }))
     .catch((error) => res.status(404).json(error));
   next();
 };
-exports.getByIdRestaurant = async (res, req, next) => {
-  await Restaurant.findOne({ _id: req.id })
-    .then((data) => res.status(201).json(data))
-    .catch((error) => res.statatus(404).json(error));
+
+exports.getRestaurant = async (req, res, next) => {
+  const id = '624d4ad88dc84c21fb3afd7c';
+  console.log(id);
+  const role = mongoose.Types.ObjectId(id);
+  await User.find({ role: role })
+    .then((users) => res.status(200).json({ data: users }))
+    .catch((error) => res.status(404).json(error));
   next();
 };
