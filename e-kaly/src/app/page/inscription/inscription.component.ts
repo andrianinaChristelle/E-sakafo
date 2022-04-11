@@ -55,7 +55,7 @@ export class InscriptionComponent implements OnInit {
     console.log(input);
     console.log("okkk");
     const onSuccess = ()=>{  
-        // this.route.navigate(['login']);     
+        this.route.navigate(['login']);     
         console.log("data enter");
     }
     const onError = (data : any)=>{
